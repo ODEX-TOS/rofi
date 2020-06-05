@@ -9,7 +9,7 @@
 
 
 pkgname=rofi-tos
-pkgver=1.5.4.r102.g151547a9
+pkgver=r3177.50692bd9
 pkgrel=1
 pkgdesc='A window switcher, run dialog and dmenu replacement'
 arch=('x86_64')
@@ -32,14 +32,12 @@ source=(
 sha256sums=('SKIP' 'SKIP' 'SKIP')
 
 pkgver() {
-  cd "${pkgname/-git}"
-
-  git describe --long --tags \
-    | sed 's/-/.r/;s/-/./'
+  cd "${pkgname/-tos}"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 prepare() {
-  cd "${pkgname/-git}"
+  cd "${pkgname/-tos}"
   for module in libgwater libnkutils; do
     local submodule="subprojects/${module}"
     git submodule init "${submodule}"
@@ -48,7 +46,7 @@ prepare() {
   done
   cd "${srcdir}"
 
-  meson setup "${pkgname/-git}" build \
+  meson setup "${pkgname/-tos}" build \
     --buildtype release               \
     --prefix /usr
 }
@@ -64,7 +62,7 @@ check() {
 package() {
   DESTDIR="${pkgdir}" ninja -C build install
 
-  cd "${pkgname/-git}"
+  cd "${pkgname/-tos}"
   install -Dm644 COPYING "${pkgdir}/usr/share/licenses/rofi/COPYING"
   install -Dm755 Examples/*.sh -t "${pkgdir}/usr/share/doc/rofi/examples"
 }
