@@ -22,8 +22,8 @@ depends=(
 )
 makedepends=('git' 'meson' 'ninja')
 checkdepends=('check')
-provides=("${pkgname/-git}")
-conflicts=("${pkgname/-git}")
+provides=("${pkgname/-tos}")
+conflicts=("${pkgname/-git}" "${pkgname}")
 source=(
   'git+https://github.com/ODEX-TOS/rofi#branch=next'
   'git+https://github.com/sardemff7/libgwater'
