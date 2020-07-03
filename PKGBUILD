@@ -17,8 +17,8 @@ url='https://github.com/DaveDavenport/rofi/'
 license=('MIT')
 depends=(
   'cairo' 'flex' 'freetype2' 'libjpeg' 'librsvg' 'libx11' 'libxcb'
-  'libxdg-basedir' 'libxft' 'libxkbcommon' 'libxkbcommon-x11' 'pango'
-  'startup-notification' 'xcb-util' 'xcb-util-wm' 'xcb-util-xrm'
+  'libxdg-basedir' 'libxft-bgra' 'libxkbcommon' 'libxkbcommon-x11' 'pango'
+  'startup-notification' 'xcb-util' 'xcb-util-wm' 'xcb-util-xrm' 'ttf-font-awesome'
 )
 makedepends=('git' 'meson' 'ninja')
 checkdepends=('check')
