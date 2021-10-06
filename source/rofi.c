@@ -238,10 +238,14 @@ void process_result ( RofiViewState *state )
         else if ( retv < MODE_EXIT ) {
             mode = ( retv ) % num_modi;
         }
+        else if ( retv == MODE_QALC_EXIT ) {
+            mode = retv;
+            rofi_set_return_code ( 10 );
+        }
         else {
             mode = retv;
         }
-        if ( mode != MODE_EXIT ) {
+        if ( mode != MODE_EXIT && mode != MODE_QALC_EXIT ) {
             /**
              * Load in the new mode.
              */

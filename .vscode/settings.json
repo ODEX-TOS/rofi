@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        ".luacheckrc": "lua",
+        "*.ld": "lua",
+        "*.ltp": "lua",
+        "*.tde": "lua",
+        "chrono": "c",
+        "variant": "c"
+    }
+}

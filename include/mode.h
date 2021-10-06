@@ -58,6 +58,9 @@ typedef enum
     PREVIOUS_DIALOG = 1003,
     /** Reloads the dialog and unset user input */
     RESET_DIALOG    = 1004,
+    /** This is in use by qalc to notify as use for calculatrion **/
+    MODE_QALC_EXIT       = 1010,
+
 } ModeMode;
 
 /**

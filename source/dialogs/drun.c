@@ -1092,7 +1092,7 @@ static ModeMode drun_mode_result(Mode *sw, int mretv, char **input, unsigned int
     else if ((mretv & MENU_CUSTOM_INPUT) && *input != NULL && *input[0] != '\0')
     {
         printf("%s", input[0]);
-        retv = MODE_EXIT;
+        retv = MODE_QALC_EXIT;
     }
     else if ((mretv & MENU_ENTRY_DELETE) && selected_line < rmpd->cmd_list_length)
     {
